@@ -29,9 +29,9 @@ function LoveCourt() {
   return (
     <div className="love-page min-h-screen overflow-hidden">
       <div className="floating-hearts" aria-hidden="true">{Array.from({ length: 8 }, (_, i) => <Heart key={i} className={`float-heart float-heart-${i}`} />)}</div>
-      <header className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6 sm:px-10">
-        <a href="#" className="flex items-center gap-2.5 text-sm font-semibold"><span className="brand-heart"><Heart size={17} fill="currentColor" /></span> the love court<span className="text-primary">.</span></a>
-        <span className="case-number text-[10px] font-medium uppercase tracking-[2px] text-muted-foreground">Case no. 001 · Us vs. My Schedule</span>
+      <header className="relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-6 sm:flex sm:justify-between sm:px-10">
+        <a href="#" className="flex min-w-0 items-center gap-2.5 text-sm font-semibold"><span className="brand-heart shrink-0"><Heart size={17} fill="currentColor" /></span><span className="truncate">the love court<span className="text-primary">.</span></span></a>
+        <span className="case-number shrink-0 text-[10px] font-medium uppercase tracking-[2px] text-muted-foreground">Case no. 001 · Us vs. My Schedule</span>
       </header>
 
       <main className="relative mx-auto max-w-3xl px-5 pb-14">
@@ -68,7 +68,7 @@ function LoveCourt() {
           <p className="mt-2 text-sm text-muted-foreground">Court tumhari hai. Dil bhi tumhara hai.</p>
           <div className="verdict-actions relative mx-auto mt-6 flex max-w-lg items-center justify-center gap-3">
             <Button className="h-12 rounded-full px-6 text-[13px]" onClick={forgive}><Heart size={16} fill="currentColor" /> {forgiven ? 'Maan Gayi! · Forgiven' : 'Maan Gayi · Forgive Him'}</Button>
-            <Button variant="outline" className={`angry-button dodge-${attempts} h-12 rounded-full bg-background/60 px-5 text-[12px]`} onPointerEnter={(event) => { if (event.pointerType === 'mouse' && attempts < 3) dodge(); }} onClick={dodge}>Abhi Bhi Gussa Hoon <span aria-hidden="true">😤</span></Button>
+            <Button variant="outline" className={`angry-button dodge-${attempts} h-12 rounded-full bg-background/60 px-5 text-[12px]`} onPointerEnter={(event) => { if (event.pointerType === 'mouse' && window.matchMedia('(hover: hover)').matches && attempts < 3) dodge(); }} onClick={dodge}>Abhi Bhi Gussa Hoon <span aria-hidden="true">😤</span></Button>
           </div>
           <p className="mt-3 min-h-5 text-xs text-muted-foreground" aria-live="polite">{attempts > 0 ? argumentsForLove[attempts - 1] : 'Psst… the second option has commitment issues.'}</p>
         </section>

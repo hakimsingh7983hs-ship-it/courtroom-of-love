@@ -216,10 +216,27 @@ html { scroll-behavior: smooth; }
   .charge-list dd { padding-left: 25px; }
   .charge-list { gap: 16px; }
   .verdict-actions { flex-direction: column; gap: 13px; min-height: 124px; }
-  .verdict-actions > button { min-width: 230px; }
+  .verdict-actions { width: 100%; max-width: 300px; margin-inline: auto; }
+  .verdict-actions > button { width: 100%; min-width: 0; }
+  .charge-list dd { min-width: 0; overflow-wrap: anywhere; }
+  .warrant-heading > div { min-width: 0; }
+  .warrant-heading > span { flex-shrink: 0; }
   .voucher h2 { font-size: 24px; }
   .voucher > div:first-child { padding: 23px 18px; }
   .voucher-stub { width: 88px; }
+}
+@media (max-width: 360px) {
+  .intro h1 { font-size: 32px; }
+  .case-number { max-width: 98px; letter-spacing: 1px; }
+  .warrant-heading { padding-inline: 18px; gap: 8px; }
+  .warrant-heading h2 { font-size: 18px; }
+  .warrant-heading + div { padding-inline: 18px; }
+  .warrant-heading + div > div:first-child { gap: 8px; }
+  .warrant-heading + div > div:first-child > span:first-child { font-size: 8px; letter-spacing: 1px; }
+  .guilty-stamp { flex-shrink: 0; }
+  .verdict-actions { max-width: 250px; }
+  .voucher-stub { width: 76px; }
+  .voucher > div:first-child { min-width: 0; padding-inline: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
