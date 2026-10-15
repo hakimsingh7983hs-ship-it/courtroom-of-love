@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Application rules
+- Keep the apology experience on the index route with ephemeral React state; verdict and voucher interactions are personal gestures, not stored transactions.
+- Use semantic global theme tokens for the romantic stationery styling and bundled artwork so visuals remain themeable and self-contained.
