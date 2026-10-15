@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { Heart, Gavel, ArrowDown, ArrowUpRight, Clock3, Phone, Sparkles, X, Check, Headphones, ShieldCheck } from 'lucide-react';
+import { Heart, Gavel, ArrowDown, ArrowUpRight, Clock3, Phone, Sparkles, X, Check, Headphones, ShieldCheck, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import bear from '@/assets/love-judge.png';
 
@@ -71,6 +71,7 @@ function LoveCourt() {
             <Button variant="outline" className={`angry-button dodge-${attempts} h-12 rounded-full bg-background/60 px-5 text-[12px]`} onPointerEnter={(event) => { if (event.pointerType === 'mouse' && window.matchMedia('(hover: hover)').matches && attempts < 3) dodge(); }} onClick={dodge}>Abhi Bhi Gussa Hoon <span aria-hidden="true">😤</span></Button>
           </div>
           <p className="mt-3 min-h-5 text-xs text-muted-foreground" aria-live="polite">{attempts > 0 ? argumentsForLove[attempts - 1] : 'Psst… the second option has commitment issues.'}</p>
+          {forgiven && <Button variant="ghost" className="mt-3 rounded-full text-xs text-primary" onClick={() => setCelebrating(true)}><RotateCcw size={14} /> Replay the verdict · Ek baar aur!</Button>}
         </section>
 
         <section className="voucher relative flex overflow-hidden rounded-lg border border-voucher-border bg-voucher" aria-label="Evening promise voucher">
